@@ -1,0 +1,41 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "prestart": "node --harmony ./routes/v1.0/seeds/upgradeSeed.js",
+    "start": "forever start -c 'node --harmony' -a -p ./logs -l forever.log -o ./logs/out.log -e ./logs/err.log ./bin/www",
+    "stop": "forever stopall",
+    "seed": "node --harmony ./routes/v1.0/seeds/startupSeed.js",
+    "debug": "node-debug --harmony ./bin/www"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "async": "^2.5.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.17.1",
+    "config": "^1.26.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "dotenv": "^4.0.0",
+    "express": "~4.15.2",
+    "express-paginate": "^0.2.2",
+    "express-session": "^1.15.3",
+    "faker": "^4.1.0",
+    "hbs": "~4.0.1",
+    "log": "^1.4.0",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.30",
+    "mongoose": "^4.11.3",
+    "mongoose-merge-plugin": "0.0.5",
+    "mongoose-paginate": "^5.0.3",
+    "morgan": "~1.8.1",
+    "nodemailer": "^4.0.1",
+    "oauth2orize": "^1.8.0",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-oauth2-client-password": "^0.1.2",
+    "serve-favicon": "~2.4.2"
+  }
+}
